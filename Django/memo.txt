@@ -1,0 +1,18 @@
+# 参考サイト
+https://qiita.com/homines22/items/2730d26e932554b6fb58
+
+# イメージの作成
+$ docker build -t django .
+
+# コンテナの起動
+$ docker run -itd -p 127.0.0.1:8000:8000 -v <作業ディレクトリ>/src:/work --name <コンテナ名> django
+
+$ cd <作業ディレクトリ>/src
+# プロジェクトの作成
+$ docker exec <コンテナ名> django-admin startproject <プロジェクト名> .
+# アプリの作成
+$ docker exec <コンテナ名> python3 manage.py startapp <アプリ名>
+
+$ cd ~/
+# 開発用サーバを起動
+$ docker exec -d <コンテナ名> python3 manage.py runserver 0.0.0.0:8000

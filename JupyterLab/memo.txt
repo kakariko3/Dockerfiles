@@ -1,0 +1,7 @@
+# イメージの作成
+$ docker build -t jupyter-lab .
+
+# コンテナの起動
+$ docker run -d -p 8888:8888 -v <作業ディレクトリ>/src:/work --name <コンテナ名> jupyter-lab
+  # コマンド例
+  $ docker run -d -p 8888:8888 -v ~/Documents/Docker/Products/jupyter-lab/src:/work --name jupyter-lab jupyter-lab
