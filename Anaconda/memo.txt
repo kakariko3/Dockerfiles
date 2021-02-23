@@ -7,6 +7,9 @@ $ docker build -t anaconda .
 # コンテナの起動
 $ docker run -itd -p 127.0.0.1:8000:8000 -v <作業ディレクトリ>/src:/work --name <コンテナ名> anaconda
 
+---
+# Djangoサーバー構築
+
 $ cd <作業ディレクトリ>/src
 # プロジェクトの作成
 $ docker exec <コンテナ名> django-admin startproject <プロジェクト名> .
