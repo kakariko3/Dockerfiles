@@ -1,0 +1,5 @@
+# イメージの作成
+$ docker build -t anaconda .
+
+# コンテナの起動
+$ docker run -itd -v <作業ディレクトリ>/src:/work --name <コンテナ名> anaconda
