@@ -1,4 +1,4 @@
-# Rails6 x MySQL x Docker 環境構築
+# Rails6 x MySQL 環境構築
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
