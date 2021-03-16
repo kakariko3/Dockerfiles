@@ -1,7 +1,7 @@
 FROM ruby:2.6.5
 
 # 必要なパッケージのインストール
-RUN apt update -qq && apt install -y \
+RUN apt-get update -qq && apt-get install -y \
   build-essential \
   libpq-dev \
   nodejs \
