@@ -25,9 +25,3 @@ RUN sudo apt-get update && sudo apt-get upgrade -y && \
 
 RUN echo "source ~/workspace/devel/setup.bash" >> ~/.bashrc && \
   echo "alias cm='cd ~/workspace && catkin_make'" >> ~/.bashrc
-
-# WORKDIR /home/ubuntu/workspace/src
-# RUN /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_init_workspace" && \
-#   git clone https://github.com/kakariko3/refro_test.git
-# WORKDIR /home/ubuntu/workspace
-# RUN /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make"
