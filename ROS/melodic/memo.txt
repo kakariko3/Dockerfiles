@@ -1,0 +1,39 @@
+sudo apt-get update
+sudo apt-get upgrade -y
+
+sudo apt-get install -y --no-install-recommends ros-melodic-move-base
+
+git clone https://github.com/kakariko3/refro_test.git
+
+sudo apt-get install -y --no-install-recommends ros-melodic-slam-gmapping ros-melodic-mouse-teleop ros-melodic-navigation python-pip python3-pip
+
+pip3 install rospkg catkin_pkg
+
+echo "source ~/workspace/devel/setup.bash" >> ~/.bashrc
+echo "alias cm='cd ~/workspace && catkin_make'" >> ~/.bashrc
+source ~/.bashrc
+
+----------
+
+$ docker build -t ubuntu-melodic .
+
+$ docker run -d -p 6080:80 -p 5900:5900 -v <作業ディレクトリ>:/home/ubuntu/workspace --name <コンテナ名> --shm-size=512m ubuntu-melodic
+
+$ docker run -d -p 6080:80 -p 5900:5900 -v ~/workspace:/home/ubuntu/workspace --name ubuntu_ros --shm-size=512m ubuntu-melodic
+
+$ docker exec -it ubuntu_ros /bin/bash
+
+# オプション
+$ docker run --rm -e RESOLUTION=1600x900
+
+ホームディレクトリ /home/ubuntu
+WORKDIR /home/ubuntu
+
+docker start <コンテナ名>
+docker stop <コンテナ名>
+
+git clone https://github.com/haloworld-works/refro_dandy.git
+git clone https://github.com/kakariko3/refro_test.git
+
+参考 : https://qiita.com/Jah524/items/fa68f99c8b787f94b884
+git clone https://xyz:x-oauth-basic@github.com/haloworld-works/refro_dandy.git

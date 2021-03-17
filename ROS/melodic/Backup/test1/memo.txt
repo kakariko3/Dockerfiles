@@ -1,0 +1,22 @@
+
+$ docker pull dorowu/ubuntu-desktop-lxde-vnc:bionic-lxqt
+
+$ docker run -d -p 6080:80 -p 5900:5900 --name ubuntu_vnc --shm-size=512m dorowu/ubuntu-desktop-lxde-vnc:bionic-lxqt
+
+----------
+
+$ docker build -t ubuntu-melodic .
+
+$ docker run -d -p 6080:80 -p 5900:5900 -v ~/Documents/work/<作業ディレクトリ>/workspace:/root/workspace --name ubuntu_vnc --shm-size=512m dorowu/ubuntu-desktop-lxde-vnc:bionic-lxqt
+
+$ docker exec -it ubuntu_vnc /bin/bash
+
+-e RESOLUTION=1600x900
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+ホームディレクトリ /root
+WORKDIR /root
+
+docker start <コンテナ名>
+docker stop <コンテナ名>
