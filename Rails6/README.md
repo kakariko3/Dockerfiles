@@ -11,7 +11,7 @@
 
 ## 2. rails new でアプリ作成
 
-作業ディレクトリにいることを確認して、下記コマンドを実行する。
+作業ディレクトリにいることを確認し、下記コマンドを実行する。
 ```
 $ docker-compose run web rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
