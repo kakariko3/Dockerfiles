@@ -1,8 +1,8 @@
-# Rails6 x MySQL 環境構築
+# Rails6 x MySQL Setup
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
-任意のディレクトリを作成し、その配下に下記のファイルを移動する。
+任意の名前のディレクトリを作成し、その配下に下記のファイルを移動する。
 - Dockerfile
 - docker-compose.yml
 - Gemfile
@@ -11,17 +11,17 @@
 
 ## 2. rails new でアプリ作成
 
-作業ディレクトリにいることを確認して、下記のコマンドを実行する。
+作業ディレクトリにいることを確認して、下記コマンドを実行する。
 ```
 $ docker-compose run web rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
-後でRSpecを導入するために `--skip-test` オプションでMinitestが作成されないようにする。<br>
+後にRSpecを導入するため、`--skip-test` オプションでMinitestが作成されないようにする。<br>
 `--webpacker` オプションでwebpackerをインストールする。
 
-## 3. イメージのビルド
+## 3. Dockerイメージのビルド
 
 `rails new` で各種ファイルの作成、webpackerのインストールが完了したら、Gemfileが更新されているので、イメージをビルドする。<br>
-下記コマンドを実行すると、Dockerイメージををビルドする際に `bundle install` をしてくれる。
+下記コマンドを実行すると、Dockerイメージををビルドする際に `bundle install` を行ってくれる。
 ```
 $ docker-compose build
 ```
@@ -63,7 +63,7 @@ $ docker-compose run web rake db:create
 ```
 $ docker-compose up
 ```
-ブラウザで http://localhost:3000/ へアクセスし、Railsが起動していることを確認する。
+Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
 
 ## 6. その他
 
