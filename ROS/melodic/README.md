@@ -12,7 +12,7 @@ $ docker build -t ubuntu-melodic .
 ```
 
 ## 2. Dockerコンテナの起動
-`docker image ls` コマンドで、`ubuntu-melodic` が作成されていることを確認し、下記コマンドを実行する。
+`docker image ls` コマンドで、Dockerイメージが作成されていることを確認し、下記コマンドを実行する。
 ```
 $ docker run -d -p 6080:80 -p 5900:5900 -v ~/refro_sim/workspace:/home/ubuntu/workspace --name refro_sim --shm-size=512m ubuntu-melodic
 ```
