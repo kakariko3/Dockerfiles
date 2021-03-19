@@ -19,7 +19,7 @@ $ docker run -d --rm -p 6080:80 -p 5900:5900 -v ~/refro_sim/share:/root/share --
 - `-p 6080:80` <br>
   Webブラウザで http://localhost:6080 へアクセスすることでnoVNCに接続できる。<br>
 - `-p 5900:5900` <br>
-  VNCクライアントで http://localhost:5900 へアクセスすることでVNCサーバに接続できる。VNC Viewerで接続を確認。<br>
+  VNCクライアントで `localhost:5900` へアクセスすることでVNCサーバに接続できる。VNC Viewerで接続を確認。<br>
 - `-v ~/<作業ディレクトリ>/share:/root/share` <br>
   ホスト側とコンテナ側の共有ディレクトリを指定。
 - `--name <コンテナ名>` <br>
