@@ -6,13 +6,13 @@
 - ROS Melodic
 
 ## 1. Dockerイメージのビルド
-Dockerfileがあるディレクトリに移動し、下記コマンドを実行する。
+Dockerfileがあるディレクトリに移動し、下記コマンドを実行。
 ```
 $ docker build -t ubuntu-melodic .
 ```
 
 ## 2. Dockerコンテナの起動
-`docker image ls` コマンドで、Dockerイメージが作成されていることを確認し、下記コマンドを実行する。
+`docker image ls` コマンドで、Dockerイメージが作成されていることを確認し、下記コマンドを実行。
 ```
 $ docker run -d --rm -p 6080:80 -p 5900:5900 -v ~/refro_sim/share:/root/share --name refro_sim --shm-size=512m ubuntu-melodic
 ```
