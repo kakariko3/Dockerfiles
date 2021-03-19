@@ -19,15 +19,15 @@ $ docker run -d -p 6080:80 -p 5900:5900 -v ~/refro_sim/workspace:/home/ubuntu/wo
 - `-p 6080:80` <br>
   Webブラウザで http://localhost:6080 へアクセスすることでnoVNCに接続できる。<br>
 - `-p 5900:5900` <br>
-  VNCクライアントで http://localhost:5900 へアクセスすることでVNCサーバに接続できる。VNC Viewerで接続を確認。<br>
-- `-v ~/<作業ディレクトリ>/workspace:/home/ubuntu/workspace` <br>
+  VNCクライアントで `localhost:5900` へアクセスすることでVNCサーバに接続できる。VNC Viewerで接続を確認。<br>
+- `-v ~/<作業ディレクトリ>/share:/home/ubuntu/share` <br>
   -vオプションで共有ディレクトリを指定。
 - `--name <コンテナ名>` <br>
   --nameオプションでコンテナ名を指定。
 - `--shm-size=512m` <br>
   共有メモリのサイズを指定。デフォルトでは64MB。
 - `-e RESOLUTION=1600x900` <br>
-  VNC環境の解像度を指定。オプションで指定しない場合、初回接続時のウィンドウサイズに自動で調整される。
+  VNC環境の画面解像度を指定。オプションで指定しない場合、初回接続時のウィンドウサイズに自動で調整される。
 
 ## 3. ワークスペースの作成
 ```
