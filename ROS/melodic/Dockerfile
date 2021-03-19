@@ -1,27 +1,43 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:bionic-lxqt
 
-RUN apt-get update -q && \
-    apt-get upgrade -yq && \
-    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu && \
-    rm -rf /var/lib/apt/lists/*
-RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
-    echo ubuntu:ubuntu | chpasswd && \
-    echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN git clone https://github.com/Tiryoh/ros_setup_scripts_ubuntu.git /tmp/ros_setup_scripts_ubuntu && \
-    gosu ubuntu /tmp/ros_setup_scripts_ubuntu/ros-melodic-desktop.sh && \
-    rm -rf /var/lib/apt/lists/*
-ENV USER ubuntu
+# Install ROS Melodic
+RUN \
+  apt-get update -qq && apt-get install -y --no-install-recommends \
+	  gnupg && \
+  sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' && \
+  apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 && \
+  apt-get update && \
+  apt-get install -y \
+	  ros-melodic-desktop-full && \
+  echo "source /opt/ros/melodic/setup.bash" >> /root/.bashrc && \
+  echo "source ~/workspace/devel/setup.bash" >> /root/.bashrc && \
+  echo "alias cm='cd ~/workspace && catkin_make'" >> /root/.bashrc && \
+  apt-get install -y \
+    python-rosdep \
+    python-rosinstall \
+    python-rosinstall-generator \
+    python-wstool \
+    build-essential &&\
+  rosdep init && \
+  rosdep update
 
-RUN sudo apt-get update && sudo apt-get upgrade -y && \
-  sudo apt-get install -y --no-install-recommends \
-  ros-melodic-move-base \
-  ros-melodic-slam-gmapping \
-  ros-melodic-mouse-teleop \
-  ros-melodic-navigation \
-  python-pip \
-  python3-pip \
-  nano && \
-  pip3 install rospkg catkin_pkg
+# Install other packages
+RUN \
+  apt-get install -y --no-install-recommends \
+    ros-melodic-move-base \
+    ros-melodic-slam-gmapping \
+    ros-melodic-mouse-teleop \
+    ros-melodic-navigation \
+    python-pip \
+    python3-pip \
+    git \
+    nano && \
+  pip3 install \
+    rospkg \
+    catkin_pkg
 
-RUN echo "source ~/workspace/devel/setup.bash" >> ~/.bashrc && \
-  echo "alias cm='cd ~/workspace && catkin_make'" >> ~/.bashrc
+# WORKDIR /root/workspace/src
+# RUN /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_init_workspace" && \
+#   git clone https://github.com/kakariko3/refro_test.git
+# WORKDIR /root/workspace
+# RUN /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make"
