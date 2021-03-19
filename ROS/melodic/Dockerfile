@@ -36,12 +36,12 @@ RUN \
     rospkg \
     catkin_pkg
 
-# Create workspace & catkin_make
-WORKDIR /root/workspace/src
-RUN \
-  /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_init_workspace" && \
-  git clone https://github.com/haloworld-works/refro_dandy.git
-WORKDIR /root/workspace
-RUN \
-  /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make"
-WORKDIR /root
+# # Create workspace & catkin_make
+# WORKDIR /root/workspace/src
+# RUN \
+#   /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_init_workspace" && \
+#   git clone https://github.com/haloworld-works/refro_dandy.git
+# WORKDIR /root/workspace
+# RUN \
+#   /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make"
+# WORKDIR /root
