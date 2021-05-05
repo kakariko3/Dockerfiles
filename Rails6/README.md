@@ -54,7 +54,7 @@ production:
 ```
 下記コマンドを実行し、データベースを作成する。
 ```
-$ docker-compose run web rake db:create
+$ docker-compose run web rails db:create
 ```
 
 ## 5. Dockerコンテナの起動
