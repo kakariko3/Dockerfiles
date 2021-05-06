@@ -2,7 +2,7 @@
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
-任意の名前のディレクトリを作成し、その直下に下記のようにファイルを配置する。
+任意の名前のディレクトリを作成し、その直下に下記の通りファイルを配置する。
 ```
 api
   - Dockerfile
@@ -24,7 +24,7 @@ $ docker-compose run api rails new . --force --no-deps --database=postgresql --a
 ## 3. Dockerイメージのビルド
 
 `rails new` で各種ファイルを作成したら、Gemfileが更新されているので、イメージをビルドする。<br>
-下記コマンドで、Dockerイメージををビルドする際に `bundle install` を行ってくれる。
+下記コマンドを実行すると、Dockerイメージををビルドする際に `bundle install` を行ってくれる。
 ```
 $ docker-compose build
 ```
@@ -45,7 +45,7 @@ default: &default
   encoding: unicode
   host: db
   username: postgres
-  password:
+  password: password
   pool: 5
 
 development:
@@ -63,11 +63,48 @@ test:
 ```
 $ docker-compose up
 ```
-下記コマンドを実行し、データベースを作成する。
+新規のターミナルで下記コマンドを実行し、データベースを作成する。
 ```
 $ docker-compose run api rails db:create
 ```
 Webブラウザを起動して以下にアクセスし、http://localhost:3000 でRails、http://localhost:8000 でReactが起動していることを確認する。
+
+## 7. その他
+
+### dockerコマンド
+---
+```
+# コンテナ一覧の表示
+$ docker ps -a
+
+# イメージ一覧
+$ docker images -a
+
+# <none>タグのイメージを一括削除
+$ docker image prune -a
+```
+
+### docker-composeコマンド
+---
+```
+# 起動
+$ docker-compose up
+
+# バックグラウンドで起動
+$ docker-compose up -d
+
+# 停止
+$ docker-compose stop
+
+# 停止＆削除
+$ docker-compose down
+
+# 稼働中のコンテナに入る
+$ docker-compose exec <サービス名> bash
+
+# コンテナ内のコマンドを実行
+$ docker-compose run <サービス名> <コマンド>
+```
 
 ### 参考資料
 ---
