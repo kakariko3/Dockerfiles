@@ -2,7 +2,7 @@
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
-任意の名前のディレクトリを作成し、その直下に下記のファイルを移動する。
+任意の名前のディレクトリを作成し、そのディレクトリ直下に下記の通りファイルを配置する。
 - Dockerfile
 - docker-compose.yml
 - Gemfile
@@ -11,11 +11,13 @@
 
 ## 2. rails new でアプリ作成
 
-作業ディレクトリにいることを確認し、下記コマンドを実行する。
+ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
 $ docker-compose run web rails new . --force --no-deps --database=mysql --skip-bundle
 ```
-このコマンドを実行することで、Dockerfileを元にwebイメージがビルドされ、コンテナの中にrailsの各種ファイルが構成される。<br>
+`docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
+このコマンドを実行することで、Dockerfileを元にwebイメージがビルドされ、Railsの各種ファイルが構成される。<br>
+
 `--force` : 既存のGemfileを上書きするためのオプション<br>
 `--no-deps` : リンクしたサービスを起動しない<br>
 `--database=mysql` : DBにMySQLを指定<br>
@@ -31,7 +33,7 @@ $ docker-compose build
 
 ## 4. database.yml の設定
 
-`rails new`で作成された`config/database.yml`を下記のように書き換える。
+`rails new`で生成された`config/database.yml`を下記のように書き換える。
 ```
 default: &default
   adapter: mysql2
@@ -62,11 +64,23 @@ production:
 ```
 $ docker-compose up
 ```
-新規のターミナルで下記コマンドを実行し、データベースを作成する。
+新規ターミナル開いて下記コマンドを実行し、データベースを作成する。
 ```
 $ docker-compose run web rails db:create
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
+
+### エラーの対処
+---
+下記のようなエラーが表示されターミナルが止まってしまった場合、
+```
+myapp_web_1 exited with code 1
+```
+コンテナを一度終了させてから、Webpackerをインストールするコマンドを実行します。
+```
+$ docker-compose down
+$ docker-compose run web bundle exec rails webpacker:install
+```
 
 ## 6. その他
 
@@ -79,7 +93,7 @@ $ docker ps -a
 $ docker images -a
 
 # <none>タグのイメージを一括削除
-$ docker image prune -a
+$ docker image prune
 ```
 
 ### docker-composeコマンド
@@ -105,5 +119,6 @@ $ docker-compose run <サービス名> <コマンド>
 
 ### 参考資料
 ---
+https://qiita.com/kodai_0122/items/795438d738386c2c1966<br>
 https://qiita.com/nsy_13/items/9fbc929f173984c30b5d<br>
-https://qiita.com/kodai_0122/items/795438d738386c2c1966
+https://www.youtube.com/watch?v=Fq1PH0Gwi8I
