@@ -1,13 +1,12 @@
-FROM ruby:2.6.5
+FROM ruby:2.7.1
 
 # 必要なパッケージのインストール
-RUN apt-get update -qq && apt-get install -y \
-  build-essential \
-  libpq-dev \
-  nodejs
+RUN apt-get update -qq && \
+    apt-get install -y nodejs
+
 WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+COPY Gemfile /myapp
+COPY Gemfile.lock /myapp
 RUN bundle install
 COPY . /myapp
 
@@ -17,5 +16,5 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
-# 実行したいコマンド
+# 起動時に実行するコマンド
 CMD ["rails", "server", "-b", "0.0.0.0"]
