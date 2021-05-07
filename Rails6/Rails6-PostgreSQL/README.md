@@ -9,7 +9,7 @@
 - Gemfile.lock
 - <span>entrypoint.sh</span>
 
-## 2. rails new でアプリ作成
+## 2. rails new でアプリを作成
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
@@ -66,14 +66,18 @@ Webブラウザで http://localhost:3000 へアクセスし、Railsが起動し�
 
 ### エラーが起きた場合の対処
 ---
-下記のようなエラーが表示されターミナルが止まってしまった場合、
+下記のようなエラーが表示され、ターミナルが止まってしまった場合、
 ```
 myapp_web_1 exited with code 1
 ```
-コンテナを一度終了させてから、Webpackerをインストールするコマンドを実行します。
+コンテナを一度終了させてから、Webpackerをインストールするコマンドを実行する。
 ```
 $ docker-compose down
 $ docker-compose run web bundle exec rails webpacker:install
+```
+再度コンテナを起動する。
+```
+$ docker-compose up
 ```
 
 ## 6. その他
@@ -85,6 +89,9 @@ $ docker ps -a
 
 # イメージ一覧
 $ docker images -a
+
+# 停止中のコンテナを削除
+$ docker container prune
 
 # <none>タグのイメージを一括削除
 $ docker image prune
