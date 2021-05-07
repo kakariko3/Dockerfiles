@@ -14,7 +14,7 @@ front
 docker-compose.yml
 ```
 
-## 2. rails new でアプリ作成
+## 2. rails new でアプリを作成
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
@@ -85,6 +85,9 @@ $ docker ps -a
 
 # イメージ一覧
 $ docker images -a
+
+# 停止中のコンテナを削除
+$ docker container prune
 
 # <none>タグのイメージを一括削除
 $ docker image prune
