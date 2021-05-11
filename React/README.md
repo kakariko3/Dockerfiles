@@ -19,6 +19,8 @@ $ docker-compose build
 ```
 $ docker-compose run --rm node npx create-react-app react_sample --template typescript
 ```
+`--rm` : 停止後コンテナを削除<br>
+`--template typescript` : TypeScriptを利用するためのテンプレートを指定。
 
 ## 4. Dockerコンテナの起動
 
