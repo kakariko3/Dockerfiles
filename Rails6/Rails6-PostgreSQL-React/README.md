@@ -42,6 +42,8 @@ $ docker-compose build
 ```
 $ docker-compose run --rm front npx create-react-app react_sample --template typescript
 ```
+`--rm` : 停止後コンテナを削除<br>
+`--template typescript` : TypeScriptを利用するためのテンプレートを指定。
 
 ## 5. database.yml の設定
 
