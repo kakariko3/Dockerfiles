@@ -25,7 +25,7 @@ $ docker-compose run api rails new . --force --no-deps --database=mysql --api
 
 `--force` : 既存のGemfileを上書きするためのオプション<br>
 `--no-deps` : リンクしたサービスを起動しない<br>
-`--database=postgresql` : DBにPostgreSQLを指定<br>
+`--database=mysql` : DBにMySQLを指定<br>
 `--api` : APIモードでアプリを作成(APIに必要ない部分をデフォルトで作成しなくなる)
 
 ## 3. Dockerイメージのビルド
