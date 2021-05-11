@@ -40,7 +40,7 @@ $ docker-compose build
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-$ docker-compose run --rm front sh -c "npm install -g create-react-app && create-react-app reactapp"
+$ docker-compose run --rm front npx create-react-app react_sample --template typescript
 ```
 
 ## 5. database.yml の設定
