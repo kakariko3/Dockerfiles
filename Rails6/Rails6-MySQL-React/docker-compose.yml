@@ -4,9 +4,11 @@ services:
     image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./db/mysql:/var/lib/mysql
+      - ./api/tmp/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+    ports:
+      - '3306:3306'
   api:
     build: 
       context: ./api
@@ -15,7 +17,7 @@ services:
     volumes:
       - ./api:/myapp
     ports:
-      - 3000:3000
+      - '3000:3000'
     depends_on:
       - db
   front:
@@ -26,4 +28,4 @@ services:
       - ./front:/usr/src/app
     command: sh -c "cd react_app && yarn start"
     ports:
-      - "8000:3000"
+      - '8000:3000'
