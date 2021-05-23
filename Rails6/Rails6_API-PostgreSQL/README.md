@@ -13,7 +13,7 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
-$ docker-compose run api rails new . --force --no-deps --database=postgresql --api
+docker-compose run api rails new . --force --no-deps --database=postgresql --api
 ```
 `docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
 このコマンドを実行することで、Dockerfileを元にapiイメージがビルドされ、Railsの各種ファイルが構成される。<br>
@@ -28,7 +28,7 @@ $ docker-compose run api rails new . --force --no-deps --database=postgresql --a
 先ほどの`rails new`により、Gemfileが更新されているので、イメージをビルドする。<br>
 下記コマンドを実行することで、Dockerイメージををビルドする際に`bundle install`が行われる。
 ```
-$ docker-compose build
+docker-compose build
 ```
 
 ## 4. database.yml の設定と、DBの作成
@@ -38,10 +38,10 @@ $ docker-compose build
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password: password
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
+  username: <%= ENV.fetch("POSTGRES_USERNAME", "postgres") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", "password") %>
 
 development:
   <<: *default
@@ -50,17 +50,23 @@ development:
 test:
   <<: *default
   database: app_test
+
+production:
+  <<: *default
+  database: app_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
 ```
 
 ## 5. Dockerコンテナの起動、DBの作成
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-$ docker-compose up
+docker-compose up
 ```
 新規ターミナルを開いて下記コマンドを実行し、データベースを作成する。
 ```
-$ docker-compose run api rails db:create
+docker-compose run api rails db:create
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
 
@@ -69,37 +75,37 @@ Webブラウザで http://localhost:3000 へアクセスし、Railsが起動し�
 ### dockerコマンド
 ```
 # コンテナ一覧の表示
-$ docker ps -a
+docker ps -a
 
 # イメージ一覧
-$ docker images -a
+docker images -a
 
 # 停止中のコンテナを削除
-$ docker container prune
+docker container prune
 
 # <none>タグのイメージを一括削除
-$ docker image prune
+docker image prune
 ```
 
 ### docker-composeコマンド
 ```
 # 起動
-$ docker-compose up
+docker-compose up
 
 # バックグラウンドで起動
-$ docker-compose up -d
+docker-compose up -d
 
 # 停止
-$ docker-compose stop
+docker-compose stop
 
 # 停止＆削除
-$ docker-compose down
+docker-compose down
 
 # 稼働中のコンテナに入る
-$ docker-compose exec <サービス名> bash
+docker-compose exec <サービス名> bash
 
 # コンテナ内のコマンドを実行
-$ docker-compose run <サービス名> <コマンド>
+docker-compose run <サービス名> <コマンド>
 ```
 
 ### 参考資料
