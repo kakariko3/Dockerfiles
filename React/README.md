@@ -17,7 +17,7 @@ $ docker-compose build
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-$ docker-compose run --rm node npx create-react-app react_app --template typescript
+$ docker-compose run --rm front npx create-react-app react_app --template typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
