@@ -85,21 +85,30 @@ docker container prune
 
 # <none>タグのイメージを一括削除
 docker image prune
+
+# コンテナ、ボリューム、ネットワーク、イメージを一括削除
+docker system prune -a
 ```
 
 ### docker-composeコマンド
 ```
-# 起動
+# コンテナの作成と起動
 docker-compose up
 
 # バックグラウンドで起動
 docker-compose up -d
+
+# 起動
+docker-compose start
 
 # 停止
 docker-compose stop
 
 # 停止＆削除
 docker-compose down
+
+# コンテナのログを表示
+docker-compose logs -f
 
 # 稼働中のコンテナに入る
 docker-compose exec <サービス名> bash
