@@ -6,11 +6,11 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   apt-get update -qq && \
   apt-get install -y nodejs yarn postgresql-client
 
-WORKDIR /myapp
-COPY Gemfile /myapp
-COPY Gemfile.lock /myapp
+WORKDIR /app
+COPY Gemfile /app
+COPY Gemfile.lock /app
 RUN bundle install
-COPY . /myapp
+COPY . /app
 
 # コンテナが起動する度に実行されるスクリプトを追加
 COPY entrypoint.sh /usr/bin/

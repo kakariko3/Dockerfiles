@@ -52,18 +52,24 @@ docker-compose run --rm front npx create-react-app react_app --template typescri
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password: password
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("POSTGRES_USERNAME", "postgres") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", "password") %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
 
 development:
   <<: *default
-  database: myapp_development
+  database: app_development
 
 test:
   <<: *default
-  database: myapp_test
+  database: app_test
+
+production:
+  <<: *default
+  database: app_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
 ```
 
 ## 6. Dockerコンテナの起動、DBの作成

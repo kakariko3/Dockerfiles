@@ -4,7 +4,7 @@
 set -e
 
 # server.pidが存在している場合、削除する
-rm -f /myapp/tmp/pids/server.pid
+rm -f /app/tmp/pids/server.pid
 
 # コンテナのメインプロセス（DockerfileでCMDとして設定されているコマンド）を実行
 exec "$@"
