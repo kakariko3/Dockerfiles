@@ -10,14 +10,14 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。<br>
 ```
-$ docker-compose build
+docker-compose build
 ```
 
 ## 3. Reactのインストール + アプリ作成
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-$ docker-compose run --rm front npx create-react-app react_app --template typescript
+docker-compose run --rm front npx create-react-app react_app --template typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
@@ -26,7 +26,7 @@ $ docker-compose run --rm front npx create-react-app react_app --template typesc
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-$ docker-compose up
+docker-compose up
 ```
 Webブラウザで http://localhost:8000 へアクセスし、Reactが起動していることを確認する。
 
@@ -35,37 +35,46 @@ Webブラウザで http://localhost:8000 へアクセスし、Reactが起動し�
 ### dockerコマンド
 ```
 # コンテナ一覧の表示
-$ docker ps -a
+docker ps -a
 
 # イメージ一覧
-$ docker images -a
+docker images -a
 
 # 停止中のコンテナを削除
-$ docker container prune
+docker container prune
 
 # <none>タグのイメージを一括削除
-$ docker image prune
+docker image prune
+
+# コンテナ、ボリューム、ネットワーク、イメージを一括削除
+docker system prune -a
 ```
 
 ### docker-composeコマンド
 ```
-# 起動
-$ docker-compose up
+# コンテナの作成と起動
+docker-compose up
 
 # バックグラウンドで起動
-$ docker-compose up -d
+docker-compose up -d
+
+# 起動
+docker-compose start
 
 # 停止
-$ docker-compose stop
+docker-compose stop
 
 # 停止＆削除
-$ docker-compose down
+docker-compose down
+
+# コンテナのログを表示
+docker-compose logs -f
 
 # 稼働中のコンテナに入る
-$ docker-compose exec <サービス名> bash
+docker-compose exec <サービス名> bash
 
 # コンテナ内のコマンドを実行
-$ docker-compose run <サービス名> <コマンド>
+docker-compose run <サービス名> <コマンド>
 ```
 
 ### 参考資料
