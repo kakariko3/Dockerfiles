@@ -79,6 +79,8 @@ myapp_web_1 exited with code 1
 コンテナを一度終了させてから、Webpackerをインストールするコマンドを実行する。
 ```
 docker-compose down
+```
+```
 docker-compose run web bundle exec rails webpacker:install
 ```
 再度コンテナを起動する。
