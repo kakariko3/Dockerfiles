@@ -13,7 +13,7 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
-$ docker-compose run web rails new . --force --no-deps --database=mysql --skip-bundle
+docker-compose run web rails new . --force --no-deps --database=mysql --skip-bundle
 ```
 `docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
 このコマンドを実行することで、Dockerfileを元にwebイメージがビルドされ、Railsの各種ファイルが構成される。<br>
@@ -28,7 +28,7 @@ $ docker-compose run web rails new . --force --no-deps --database=mysql --skip-b
 先ほどの`rails new`により、Gemfileが更新されているので、イメージをビルドする。<br>
 下記コマンドを実行することで、Dockerイメージををビルドする際に`bundle install`が行われる。
 ```
-$ docker-compose build
+docker-compose build
 ```
 
 ## 4. database.yml の設定
@@ -62,11 +62,11 @@ production:
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-$ docker-compose up
+docker-compose up
 ```
 新規ターミナルを開いて下記コマンドを実行し、データベースを作成する。
 ```
-$ docker-compose run web rails db:create
+docker-compose run web rails db:create
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
 
@@ -78,12 +78,14 @@ myapp_web_1 exited with code 1
 ```
 コンテナを一度終了させてから、Webpackerをインストールするコマンドを実行する。
 ```
-$ docker-compose down
-$ docker-compose run web bundle exec rails webpacker:install
+docker-compose down
+```
+```
+docker-compose run web bundle exec rails webpacker:install
 ```
 再度コンテナを起動する。
 ```
-$ docker-compose up
+docker-compose up
 ```
 
 ## 6. その他
@@ -91,37 +93,46 @@ $ docker-compose up
 ### dockerコマンド
 ```
 # コンテナ一覧の表示
-$ docker ps -a
+docker ps -a
 
 # イメージ一覧
-$ docker images -a
+docker images -a
 
 # 停止中のコンテナを削除
-$ docker container prune
+docker container prune
 
 # <none>タグのイメージを一括削除
-$ docker image prune
+docker image prune
+
+# コンテナ、ボリューム、ネットワーク、イメージを一括削除
+docker system prune -a
 ```
 
 ### docker-composeコマンド
 ```
-# 起動
-$ docker-compose up
+# コンテナの作成と起動
+docker-compose up
 
 # バックグラウンドで起動
-$ docker-compose up -d
+docker-compose up -d
+
+# 起動
+docker-compose start
 
 # 停止
-$ docker-compose stop
+docker-compose stop
 
 # 停止＆削除
-$ docker-compose down
+docker-compose down
+
+# コンテナのログを表示
+docker-compose logs -f
 
 # 稼働中のコンテナに入る
-$ docker-compose exec <サービス名> bash
+docker-compose exec <サービス名> bash
 
 # コンテナ内のコマンドを実行
-$ docker-compose run <サービス名> <コマンド>
+docker-compose run <サービス名> <コマンド>
 ```
 
 ### 参考資料
