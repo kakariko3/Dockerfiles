@@ -71,7 +71,7 @@ docker-compose down
 docker-compose logs -f
 
 # 稼働中のコンテナに入る
-docker-compose exec <サービス名> bash
+docker-compose exec <サービス名> ash
 
 # コンテナ内のコマンドを実行
 docker-compose run <サービス名> <コマンド>
