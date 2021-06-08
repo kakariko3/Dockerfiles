@@ -13,11 +13,12 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
-docker-compose run --rm api rails new . --no-deps --database=mysql --api
+docker-compose run api rails new . --force --no-deps --database=mysql --api
 ```
 `docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
 このコマンドを実行することで、Dockerfileを元にapiイメージがビルドされ、Railsの各種ファイルが構成される。<br>
 
+`--force` : 既存のGemfileを上書きするためのオプション<br>
 `--no-deps` : リンクしたサービスを起動しない<br>
 `--database=mysql` : DBにMySQLを指定<br>
 `--api` : APIモードでアプリを作成(APIに必要ない部分をデフォルトで作成しなくなる)
