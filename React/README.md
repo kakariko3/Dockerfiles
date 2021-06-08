@@ -32,8 +32,8 @@ Webブラウザで http://localhost:8000 へアクセスし、Reactが起動し�
 
 ## 5. その他
 
-### エラーが起きた場合の対処
----
+## エラーが起きた場合の対処
+
 `git clone`をしてアプリを起動する場合、下記の対処を行う。
 ```
 docker-compose run --rm front /bin/sh -c "cd react_app && yarn install"
@@ -41,7 +41,7 @@ docker-compose run --rm front /bin/sh -c "cd react_app && yarn install"
 `/アプリ名/react_app/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js`内のファイルを下記サイトを参考に書き換える。<br>
 https://qiita.com/ke1t0/items/54fb5886439775f20d93
 
-### 参考資料
----
+## 参考資料
+
 https://blog.web.nifty.com/engineer/2714<br>
 https://qiita.com/2754github/items/413bdaaa90834e219dc8
