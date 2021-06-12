@@ -70,8 +70,10 @@ docker-compose run web rails db:create
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
 
-### エラーが起きた場合の対処
----
+## 6. その他
+
+## エラーが起きた場合の対処
+
 下記のようなエラーが表示され、ターミナルが止まってしまった場合、
 ```
 myapp_web_1 exited with code 1
@@ -88,55 +90,8 @@ docker-compose run web bundle exec rails webpacker:install
 docker-compose up
 ```
 
-## 6. その他
+## 参考資料
 
-### dockerコマンド
-```
-# コンテナ一覧の表示
-docker ps -a
-
-# イメージ一覧
-docker images -a
-
-# 停止中のコンテナを削除
-docker container prune
-
-# <none>タグのイメージを一括削除
-docker image prune
-
-# コンテナ、ボリューム、ネットワーク、イメージを一括削除
-docker system prune -a
-```
-
-### docker-composeコマンド
-```
-# コンテナの作成と起動
-docker-compose up
-
-# バックグラウンドで起動
-docker-compose up -d
-
-# 起動
-docker-compose start
-
-# 停止
-docker-compose stop
-
-# 停止＆削除
-docker-compose down
-
-# コンテナのログを表示
-docker-compose logs -f
-
-# 稼働中のコンテナに入る
-docker-compose exec <サービス名> bash
-
-# コンテナ内のコマンドを実行
-docker-compose run <サービス名> <コマンド>
-```
-
-### 参考資料
----
 https://qiita.com/kodai_0122/items/795438d738386c2c1966<br>
 https://qiita.com/nsy_13/items/9fbc929f173984c30b5d<br>
 https://www.youtube.com/watch?v=Fq1PH0Gwi8I
