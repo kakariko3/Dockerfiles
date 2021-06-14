@@ -44,7 +44,7 @@ Webブラウザで http://localhost:8000 へアクセスし、Djangoが起動し
 
 新規ターミナルを開いて下記コマンドを実行し、アプリケーションを作成する。
 ```
-docker-compose exec web python3 manage.py startapp <アプリ名>
+docker-compose exec web python manage.py startapp <アプリ名>
 ```
 
 ## 6. その他
