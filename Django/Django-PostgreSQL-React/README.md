@@ -58,7 +58,7 @@ Webブラウザを起動して以下にアクセスし、http://localhost:8000 �
 
 新規ターミナルを開いて下記コマンドを実行し、アプリケーションを作成する。
 ```
-docker-compose exec api python3 manage.py startapp <アプリ名>
+docker-compose exec api python manage.py startapp <アプリ名>
 ```
 
 ## 7. その他
