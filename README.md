@@ -3,6 +3,7 @@
 各ディレクトリ内の`README.md`を参照。
 
 ## dockerコマンド
+
 ```
 # コンテナ一覧の表示
 docker ps -a
@@ -21,6 +22,7 @@ docker system prune -a
 ```
 
 ## docker-composeコマンド
+
 ```
 # コンテナの作成と起動
 docker-compose up
@@ -40,7 +42,10 @@ docker-compose down
 # コンテナのログを表示
 docker-compose logs -f
 
-# 稼働中のコンテナに入る
+# 起動中のコンテナに入る(bash)
+docker-compose exec <サービス名> bash
+
+# 起動中のコンテナに入る(ash)
 docker-compose exec <サービス名> ash
 
 # コンテナ内のコマンドを実行
