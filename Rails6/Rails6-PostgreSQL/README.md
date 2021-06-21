@@ -13,7 +13,7 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。
 ```
-docker-compose run web rails new . --force --no-deps --database=postgresql --skip-bundle
+docker-compose run app rails new . --force --no-deps --database=postgresql --skip-bundle
 ```
 `docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
 このコマンドを実行することで、Dockerfileを元にwebイメージがビルドされ、Railsの各種ファイルが構成される。<br>
@@ -66,7 +66,7 @@ docker-compose up
 ```
 新規ターミナルを開いて下記コマンドを実行し、データベースを作成する。
 ```
-docker-compose run web rails db:create
+docker-compose run app rails db:create
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Railsが起動していることを確認する。
 
@@ -83,7 +83,7 @@ myapp_web_1 exited with code 1
 docker-compose down
 ```
 ```
-docker-compose run web bundle exec rails webpacker:install
+docker-compose run app bundle exec rails webpacker:install
 ```
 再度コンテナを起動する。
 ```
