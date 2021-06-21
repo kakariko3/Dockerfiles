@@ -29,6 +29,7 @@
 ```
 make create-project
 ```
+Webブラウザで http://localhost へアクセスし、Laravelが起動していることを確認する。
 
 ## 3. その他
 
