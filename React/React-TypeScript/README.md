@@ -10,14 +10,14 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。<br>
 ```
-docker-compose build
+docker-compose build --no-cache
 ```
 
 ## 3. Reactのインストール + アプリ作成
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-docker-compose run --rm front npx create-react-app react_app --template typescript
+docker-compose run --rm front /bin/sh -c 'npx create-react-app react_app --template typescript'
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
@@ -26,9 +26,9 @@ docker-compose run --rm front npx create-react-app react_app --template typescri
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-docker-compose up
+docker-compose up -d
 ```
-Webブラウザで http://localhost:8000 へアクセスし、Reactが起動していることを確認する。
+Webブラウザで http://localhost:3000 へアクセスし、Reactが起動していることを確認する。
 
 ## 5. その他
 
@@ -36,12 +36,11 @@ Webブラウザで http://localhost:8000 へアクセスし、Reactが起動し�
 
 `git clone`をしてアプリを起動する場合、下記の対処を行う。
 ```
-docker-compose run --rm front /bin/sh -c "cd react_app && yarn install"
+docker-compose run --rm front /bin/sh -c 'cd react_app && yarn install'
 ```
 `/アプリ名/react_app/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js`を下記サイトを参考に書き換える。<br>
 https://qiita.com/ke1t0/items/54fb5886439775f20d93
 
 ## 参考資料
 
-https://blog.web.nifty.com/engineer/2714<br>
-https://qiita.com/2754github/items/413bdaaa90834e219dc8
+https://qiita.com/kashimuuuuu/items/b5f35057dfe1980d053a
