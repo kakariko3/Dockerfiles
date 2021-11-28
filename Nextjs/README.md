@@ -10,14 +10,14 @@
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。<br>
 ```
-docker-compose build
+docker-compose build --no-cache
 ```
 
 ## 3. Next.jsのインストール + アプリ作成
 
 下記コマンドを実行し、Next.jsアプリを作成する。
 ```
-docker-compose run --rm front npx create-next-app next_app
+docker-compose run --rm front npx create-next-app next_app --typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--use-npm` : パッケージマネージャーにnpmを指定<br>
@@ -27,9 +27,9 @@ docker-compose run --rm front npx create-next-app next_app
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-docker-compose up
+docker-compose up -d
 ```
-Webブラウザで http://localhost:8000 へアクセスし、Next.jsが起動していることを確認する。
+Webブラウザで http://localhost:3000 へアクセスし、Next.jsが起動していることを確認する。
 
 ## 5. その他
 
