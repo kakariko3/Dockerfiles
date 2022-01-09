@@ -1,9 +1,8 @@
-FROM python:3
+FROM python:3.7
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /code
 WORKDIR /code
-ADD requirements.txt /code/
+COPY requirements.txt /code/requirements.txt
 RUN pip install -r requirements.txt
-ADD . /code/
+COPY . /code
