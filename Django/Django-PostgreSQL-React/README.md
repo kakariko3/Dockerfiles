@@ -4,10 +4,11 @@
 
 任意の名前の作業ディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
 ```
+backend
+  - requirements.txt
 docker
   - backend
     - Dockerfile
-    - requirements.txt
   - front
     - Dockerfile
 .gitignore
@@ -81,4 +82,5 @@ docker-compose exec backend python manage.py startapp <アプリ名>
 
 https://qiita.com/greenteabiscuit/items/c40ba038703c9f33499b<br>
 https://qiita.com/Kobayashi2019/items/66c03b29d8f5effd2341<br>
-https://qiita.com/shiranon/items/b3efd3ed7ce473c6ad83
+https://qiita.com/shiranon/items/b3efd3ed7ce473c6ad83<br>
+https://qiita.com/mk-tool/items/1c7e4929055bb3b7aeda

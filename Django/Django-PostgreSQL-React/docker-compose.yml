@@ -16,9 +16,9 @@ services:
       TZ: Asia/Tokyo
   
   backend:
-    build: 
-      context: ./docker/backend
-      dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
     volumes:
       - ./backend:/app
     ports:
@@ -28,7 +28,7 @@ services:
       - db
   
   frontend:
-    build: 
+    build:
       context: ./docker/frontend
       dockerfile: Dockerfile
     volumes:
