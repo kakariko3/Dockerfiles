@@ -78,6 +78,12 @@ docker-compose exec backend python manage.py startapp <アプリ名>
 
 ## 7. その他
 
+## Pythonの自動補完機能(VSCode)を有効化
+
+https://qiita.com/suzuki_sh/items/6bc15446965df20b6c5a#vscode%E3%81%A7docker%E5%86%85%E3%81%AEpython%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B
+上記のURLを参考に、backendコンテナにVSCode拡張機能(Python)をインストールする。
+また、VSCode内で使用するPythonをコンテナ内のものに変更する。(インタープリターを選択)
+
 ## 参考資料
 
 https://qiita.com/greenteabiscuit/items/c40ba038703c9f33499b<br>
