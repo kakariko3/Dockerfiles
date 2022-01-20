@@ -1,4 +1,4 @@
-# Django x PostgreSQL x React Setup
+# Setup Django x PostgreSQL x React
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
