@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./docker/frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:8080
+    environment: 
+      - NODE_ENV=development
+    command: /bin/sh -c 'yarn serve'
