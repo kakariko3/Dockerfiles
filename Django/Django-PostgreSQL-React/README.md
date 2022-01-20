@@ -4,16 +4,17 @@
 
 任意の名前の作業ディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
 ```
-backend
-  - .gitignore
-  - requirements.txt
-docker
-  - backend
-    - Dockerfile
-  - front
-    - Dockerfile
-.gitignore
-docker-compose.yml
+./
+├── backend
+│   ├── .gitignore
+│   └── requirements.txt
+├── docker
+│   ├── frontend
+│   │   └── Dockerfile
+│   └── backend
+│       └── Dockerfile
+├── .gitignore
+└── docker-compose.yml
 ```
 `requirements.txt`を編集し、プロジェクトに必要なPythonパッケージを追記する。
 
