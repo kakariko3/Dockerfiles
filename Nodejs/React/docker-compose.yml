@@ -1,11 +1,14 @@
-version: '3'
+version: '3.8'
+
 services:
-  front:
-    build: .
-    environment:
-      - NODE_ENV=development
+  frontend:
+    build:
+      context: ./docker/frontend
+      dockerfile: Dockerfile
     volumes:
-      - .:/usr/src/app
-    command: /bin/sh -c 'cd react_app && yarn start'
+      - ./frontend:/app
     ports:
-      - '3000:3000'
+      - 3000:3000
+    environment: 
+      - NODE_ENV=development
+    command: /bin/sh -c 'yarn start'

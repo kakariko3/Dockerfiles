@@ -1,10 +1,16 @@
-# React Setup
+# Setup React
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
-任意の名前のディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
-- Dockerfile
-- docker-compose.yml
+任意の名前の作業ディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
+```
+./
+├── docker
+│   └── frontend
+│       └── Dockerfile
+├── .gitignore
+└── docker-compose.yml
+```
 
 ## 2. Dockerイメージのビルド
 
@@ -13,11 +19,11 @@
 docker-compose build --no-cache
 ```
 
-## 3. Reactのインストール + アプリ作成
+## 3. Reactアプリを作成
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-docker-compose run --rm front /bin/sh -c 'npx create-react-app react_app --template typescript'
+docker-compose run --rm frontend /bin/sh -c 'npx create-react-app . --template typescript'
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
@@ -31,15 +37,6 @@ docker-compose up -d
 Webブラウザで http://localhost:3000 へアクセスし、Reactが起動していることを確認する。
 
 ## 5. その他
-
-## エラーが起きた場合の対処
-
-`git clone`をしてアプリを起動する場合、下記の対処を行う。
-```
-docker-compose run --rm front /bin/sh -c 'cd react_app && yarn install'
-```
-`/アプリ名/react_app/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js`を下記サイトを参考に書き換える。<br>
-https://qiita.com/ke1t0/items/54fb5886439775f20d93
 
 ## 参考資料
 
