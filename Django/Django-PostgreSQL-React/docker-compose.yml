@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   db:
@@ -32,9 +32,10 @@ services:
       context: ./docker/frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/usr/src/app
+      - ./frontend:/app
     ports:
       - 3000:3000
     environment: 
       - NODE_ENV=development
+    tty: true
     command: /bin/sh -c 'yarn start'
