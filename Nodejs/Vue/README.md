@@ -38,6 +38,7 @@ module.exports = {
   },
 };
 ```
+参考: https://uyamazak.hatenablog.com/entry/2018/07/31/115457
 
 ## 5. Dockerコンテナの起動
 
@@ -52,5 +53,4 @@ Webブラウザで http://localhost:8080 へアクセスし、Vue.jsが起動し
 ## 参考資料
 
 https://zenn.dev/chida/articles/8f16e42364398c<br>
-https://zenn.dev/tasuya/articles/ad5d71c46db516<br>
-https://uyamazak.hatenablog.com/entry/2018/07/31/115457
+https://zenn.dev/tasuya/articles/ad5d71c46db516
