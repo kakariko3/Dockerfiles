@@ -28,15 +28,7 @@ docker-compose run --rm frontend npx vue create .
 下記URLを参考に、Vueプロジェクトの各オプションを選択する。<br>
 https://qiita.com/shizen-shin/items/a2521440b7dbcab65f9d
 
-## 4. Dockerコンテナの起動
-
-下記コマンドを実行し、コンテナを起動する。
-```
-docker-compose up -d
-```
-Webブラウザで http://localhost:8080 へアクセスし、Vue.jsが起動していることを確認する。
-
-## 5. ホットロードの有効化
+## 4. ホットロードの有効化
 
 Vueプロジェクト直下に`vue.config.js`を作成し、下記のコードを追加する。
 ```
@@ -46,6 +38,14 @@ module.exports = {
   },
 };
 ```
+
+## 5. Dockerコンテナの起動
+
+下記コマンドを実行し、コンテナを起動する。
+```
+docker-compose up -d
+```
+Webブラウザで http://localhost:8080 へアクセスし、Vue.jsが起動していることを確認する。
 
 ## 6. その他
 
