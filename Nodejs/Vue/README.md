@@ -36,9 +36,21 @@ docker-compose up -d
 ```
 Webブラウザで http://localhost:8080 へアクセスし、Vue.jsが起動していることを確認する。
 
-## 5. その他
+## 5. ホットロードの有効化
+
+Vueプロジェクト直下に`vue.config.js`を作成し、下記のコードを追加する。
+```
+module.exports = {
+  devServer: {
+    public: '0.0.0.0:8080',
+  },
+};
+```
+
+## 6. その他
 
 ## 参考資料
 
 https://zenn.dev/chida/articles/8f16e42364398c<br>
-https://zenn.dev/tasuya/articles/ad5d71c46db516
+https://zenn.dev/tasuya/articles/ad5d71c46db516<br>
+https://uyamazak.hatenablog.com/entry/2018/07/31/115457
