@@ -27,7 +27,7 @@ docker-compose run --rm backend rails new . --force --skip-bundle --database=pos
 `docker-compose run`コマンドではイメージの構築から、コンテナの構築・起動まで行ってくれる。引数にサービスを指定する必要がある。<br>
 このコマンドを実行することで、Dockerfileを元にbackendイメージがビルドされ、Railsの各種ファイルが構成される。<br>
 
-`--force` : 既存のGemfileを上書きするためのオプション<br>
+`--force` : 既存のGemfileを上書きする<br>
 `--skip-bundle` : bundle installを実行しない<br>
 `--database=postgresql` : DBにPostgreSQLを指定<br>
 `--api` : APIモードでアプリを作成(APIに必要ない部分をデフォルトで作成しなくなる)
