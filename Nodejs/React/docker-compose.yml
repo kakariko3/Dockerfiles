@@ -5,6 +5,7 @@ services:
     build:
       context: ./docker/frontend
       dockerfile: Dockerfile
+    command: /bin/sh -c 'yarn start'
     volumes:
       - ./frontend:/app
     ports:
@@ -12,4 +13,3 @@ services:
     environment: 
       - NODE_ENV=development
     tty: true
-    command: /bin/sh -c 'yarn start'
