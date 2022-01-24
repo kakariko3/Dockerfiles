@@ -1,2 +1,6 @@
-FROM node:14-alpine
-WORKDIR /usr/src/app
+FROM node:16.13.2-alpine
+
+ENV LANG=C.UTF-8 \
+    TZ=Asia/Tokyo
+
+WORKDIR /app

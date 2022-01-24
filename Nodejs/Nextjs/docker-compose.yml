@@ -1,11 +1,15 @@
-version: '3'
+version: '3.8'
+
 services:
-  front:
-    build: .
-    environment:
-      - NODE_ENV=development
+  frontend:
+    build:
+      context: ./docker/frontend
+      dockerfile: Dockerfile
+    command: /bin/sh -c 'yarn dev'
     volumes:
-      - .:/usr/src/app
-    command: /bin/sh -c "cd next_app && yarn dev"
+      - ./frontend:/app
     ports:
-      - '3000:3000'
+      - 3000:3000
+    environment: 
+      - NODE_ENV=development
+    tty: true

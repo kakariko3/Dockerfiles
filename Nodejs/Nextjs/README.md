@@ -1,10 +1,16 @@
-# Next.js Setup
+# Setup Next.js
 
 ## 1. 作業ディレクトリの作成、各種ファイルの準備
 
 任意の名前のディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
-- Dockerfile
-- docker-compose.yml
+```
+.
+├── docker
+│   └── frontend
+│       └── Dockerfile
+├── .gitignore
+└── docker-compose.yml
+```
 
 ## 2. Dockerイメージのビルド
 
@@ -17,9 +23,10 @@ docker-compose build --no-cache
 
 下記コマンドを実行し、Next.jsアプリを作成する。
 ```
-docker-compose run --rm front npx create-next-app next_app --typescript
+docker-compose run --rm frontend npx create-next-app . --typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
+`typescript` : TypeScriptを利用するためのテンプレートを指定。<br>
 `--use-npm` : パッケージマネージャーにnpmを指定<br>
 `--example xxx` : テンプレートを指定
 
@@ -35,4 +42,4 @@ Webブラウザで http://localhost:3000 へアクセスし、Next.jsが起動�
 
 ## 参考資料
 
-https://zenn.dev/taku1115/articles/6c9fa97ab37e38
+https://zenn.dev/tasuya/articles/da033574b85e6d
