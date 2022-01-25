@@ -20,12 +20,3 @@ RUN apk update && \
     apk del build-dependencies
 
 COPY ./backend /app
-
-# コンテナが起動する度に実行されるスクリプトを追加
-COPY ./backend/entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
-
-# 起動時に実行するコマンド
-CMD ["rails", "server", "-b", "0.0.0.0"]
