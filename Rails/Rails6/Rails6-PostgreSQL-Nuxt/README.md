@@ -75,6 +75,13 @@ production:
   username: app
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
 ```
+また、`backend/.gitignore`に下記のテキストを追記する。
+```
+# Original
+.DS_Store
+/.ash_history
+/.irb_history
+```
 
 ## 6. DBの作成、Dockerコンテナの起動
 
