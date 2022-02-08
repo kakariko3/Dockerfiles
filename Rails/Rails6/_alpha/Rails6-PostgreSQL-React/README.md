@@ -45,13 +45,15 @@ docker-compose run --rm frontend npx create-react-app app --template typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
+<br>
 
 下記コマンドを実行し、Reactアプリをappディレクトリからfrontendディレクトリ直下に移動する。
 ```
 mv frontend/app/{*,.*} frontend
 ```
-`*` : 全てのディレクトリ・ファイル
+`*` : 全てのディレクトリ・ファイル<br>
 `.*` : 全てのドットディレクトリ・ドットファイル
+<br>
 
 下記コマンドを実行し、空になったappディレクトリを削除する。
 ```
