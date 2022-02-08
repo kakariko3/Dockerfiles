@@ -111,5 +111,5 @@ Webブラウザを起動して以下にアクセスし、http://localhost:8000 �
 
 https://qiita.com/kashimuuuuu/items/b5f35057dfe1980d053a<br>
 https://blog.cloud-acct.com/posts/u-docker-compose-rails6new/<br>
-https://blog.cloud-acct.com/posts/u-docker-create-nuxtjs/
-https://qiita.com/at-946/items/c69a512ea47941747b18<br>
+https://blog.cloud-acct.com/posts/u-docker-create-nuxtjs/<br>
+https://qiita.com/at-946/items/c69a512ea47941747b18
