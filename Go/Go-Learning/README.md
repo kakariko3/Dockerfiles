@@ -23,7 +23,7 @@ docker-compose up -d
 docker-compose exec app ash
 ```
 
-## 7. その他
+## 3. その他
 
 ## VSCodeの自動補完機能を有効化
 
