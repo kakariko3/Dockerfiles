@@ -45,7 +45,9 @@ go mod tidy
 ```
 `go.mod`及び`go.sum`にパッケージの情報が反映される。<br>
 
-参考: https://zenn.dev/spiegel/articles/20210223-go-module-aware-mode<br>
+参考: 
+https://zenn.dev/spiegel/articles/20210223-go-module-aware-mode<br>
+https://nishinatoshiharu.com/go-modules-overview/<br>
 
 ## 参考資料
 
