@@ -31,6 +31,22 @@ https://zenn.dev/tomi/articles/2020-10-22-go-docker<br>
 上記のURLを参考に、コンテナ(app)にリモートアクセスする新規ウィンドウを開き、VSCode拡張機能(golang.go)をインストールする。<br>
 また、コマンドパレットから`Go: Install/Update Tools`を選択し、拡張機能が依存するGoパッケージをインストールする。
 
+## Go Modulesでパッケージをモジュールとして管理
+
+appディレクトリに移動し、下記コマンドを実行する。
+```
+go mod init app
+```
+カレントディレクトリ直下に`go.mod`が作成される。<br>
+
+パッケージをインストールする場合、importに必要なパッケージを記述し、下記コマンドを実行する。
+```
+go mod tidy
+```
+`go.mod`及び`go.sum`にパッケージの情報が反映される。<br>
+
+参考: https://zenn.dev/spiegel/articles/20210223-go-module-aware-mode<br>
+
 ## 参考資料
 
 https://zenn.dev/tomi/articles/2020-10-14-go-docker<br>
