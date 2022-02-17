@@ -8,19 +8,22 @@ type Person struct {
 }
 
 func main() {
-	var mike Person
+	var tim Person
+	tim.firstName = "Tim"
+	tim.age = 10
+	fmt.Println(tim) // => {Tim 10}
+
+	bob := Person{"Bob", 15}
+	fmt.Println(bob) // => {Bob 15}
+
+	sam := Person{age: 20, firstName: "Sam"}
+	fmt.Println(sam) // => {Sam 20}
+
+	mike := new(Person)
 	mike.firstName = "Mike"
-	mike.age = 20
-	fmt.Println(mike) // => {Mike 20}
+	mike.age = 25
+	fmt.Println(mike) // => &{Mike 25}
 
-	bob := Person{"Tim", 30}
-	fmt.Println(bob) // => {Tim 30}
-
-	sam := Person{age: 15, firstName: "Sam"}
-	fmt.Println(sam) // => {Sam 15}
-
-	tim := new(Person)
-	tim.firstName = "Bob"
-	tim.age = 25
-	fmt.Println(tim) // => &{Bob 25}
+	luke := &Person{"Luke", 30}
+	fmt.Println(luke) // => &{Luke 30}
 }
