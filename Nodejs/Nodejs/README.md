@@ -18,21 +18,11 @@
 docker-compose up -d
 ```
 
-下記コマンドを実行し、appコンテナに入り、nodeパッケージをインストールする。
+下記コマンドを実行し、appコンテナに入る。
 ```
 docker-compose exec app ash
 ```
-```
-yarn install
-```
-
-下記コマンドを実行し、ローカルサーバーを起動する。
-```
-yarn dev
-```
-Webブラウザを起動して、http://localhost:3000 にアクセスし、サーバーが起動していることを確認する。
 
 ## 3. その他
 
 ## 参考資料
-https://madogiwa0124.hatenablog.com/entry/2020/05/03/152217<br>
