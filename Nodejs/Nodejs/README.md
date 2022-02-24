@@ -6,6 +6,7 @@
 ```
 .
 ├── app
+│   ├── .gitignore
 │   └── Dockerfile
 ├── .gitignore
 └── docker-compose.yml
