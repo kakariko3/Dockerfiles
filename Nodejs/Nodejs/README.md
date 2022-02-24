@@ -34,5 +34,13 @@ Webブラウザを起動して、http://localhost:3000 にアクセスし、サ�
 
 ## 3. その他
 
+## Webpackのビルドを実行
+
+下記コマンドを実行し、Webpackのビルドを実行する。
+```
+yarn build
+```
+`dist`ディレクトリにバンドルされたファイル群が生成されたことを確認する。
+
 ## 参考資料
 https://madogiwa0124.hatenablog.com/entry/2020/05/03/152217<br>
