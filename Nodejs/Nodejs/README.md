@@ -40,7 +40,7 @@ Webブラウザを起動して、http://localhost:3000 にアクセスし、サ�
 ```
 yarn build
 ```
-`dist`ディレクトリにバンドルされたファイル群が生成されたことを確認する。
+distディレクトリにバンドルされたファイル群が生成されたことを確認する。
 
 ## 参考資料
 https://madogiwa0124.hatenablog.com/entry/2020/05/03/152217<br>
