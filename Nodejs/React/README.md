@@ -48,6 +48,10 @@ Webブラウザで http://localhost:3000 へアクセスし、Reactが起動し�
 
 ## 5. その他
 
+## ESLint & Prettier の設定
+
+参考: https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
+
 ## 参考資料
 
 https://qiita.com/kashimuuuuu/items/b5f35057dfe1980d053a<br>
