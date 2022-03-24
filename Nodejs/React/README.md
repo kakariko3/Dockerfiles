@@ -50,7 +50,11 @@ Webブラウザで http://localhost:3000 へアクセスし、Reactが起動し�
 
 ## ESLint & Prettier の設定
 
-参考: https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
+下記URLを参考に、ESLintとPrettierのインストールと設定を行う。
+
+参考:<br>
+https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
+https://yumegori.com/vscode_react_typescript_eslint_prettier<br>
 
 ## 参考資料
 
