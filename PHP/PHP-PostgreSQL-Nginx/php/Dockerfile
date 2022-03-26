@@ -1,4 +1,4 @@
-FROM php:8.0-fpm-alpine
+FROM php:8.1-fpm-alpine
 
 # Composerのインストール(マルチステージビルド)
 COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
@@ -16,10 +16,10 @@ RUN apk update && \
     apk add --no-cache ${RUNTIME_PACKAGES} && \
     docker-php-ext-install pgsql pdo_pgsql
 
-# 設定ファイルをコンテナのパスにコピー
-COPY ./php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
+# 設定ファイルをコンテナにコピー
+COPY ./php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 COPY ./php.ini /usr/local/etc/php/php.ini
 
-COPY ./src /app
+COPY ./src /var/www/html
 
-WORKDIR /app
+WORKDIR /var/www/html

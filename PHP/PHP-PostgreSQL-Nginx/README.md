@@ -9,8 +9,10 @@
 │   └── initdb
 │       └── init.sql
 ├── nginx
-│   ├── default.conf
-│   └── Dockerfile
+│   ├── conf.d
+│   │   └── default.conf
+│   ├── Dockerfile
+│   └── nginx.conf
 ├── php
 │   ├── php-fpm.d
 │   │   └── zzz-www.conf
@@ -28,12 +30,13 @@
 ```
 docker-compose up -d
 ```
-Webブラウザを起動して http://localhost/ へアクセスし、アプリが起動することを確認する。
+Webブラウザを起動して http://localhost:3000 へアクセスし、アプリが起動することを確認する。
 
 ## 3. その他
 
 ## 参考資料
 
+https://qiita.com/yCroma/items/c22d948b4393fbc96f53<br>
 https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4<br>
 https://qiita.com/kouki_o9/items/113002580945e94b1456<br>
 https://www.ritolab.com/entry/220<br>
