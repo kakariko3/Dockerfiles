@@ -16,6 +16,7 @@ RUN apk update && \
     apk add --no-cache ${RUNTIME_PACKAGES} && \
     docker-php-ext-install pgsql pdo_pgsql
 
+# 設定ファイルをコンテナのパスにコピー
 COPY ./php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./php.ini /usr/local/etc/php/php.ini
 

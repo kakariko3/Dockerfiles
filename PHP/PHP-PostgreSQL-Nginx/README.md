@@ -8,11 +8,15 @@
 ├── db
 │   └── initdb
 │       └── init.sql
-├── html
-│   └── index.php
-├── web
+├── nginx
+│   ├── default.conf
+│   └── Dockerfile
+├── php
+│   ├── php-fpm.d
+│   │   └── zzz-www.conf
+│   ├── src
+│   │   └── index.php
 │   ├── Dockerfile
-│   ├── httpd.conf
 │   └── php.ini
 ├── .gitignore
 └── docker-compose.yml
@@ -24,9 +28,9 @@
 ```
 docker-compose up -d
 ```
-Webブラウザを起動して http://localhost:8080/ へアクセスし、アプリが起動することを確認する。
+Webブラウザを起動して http://localhost/ へアクセスし、アプリが起動することを確認する。
 
-## 7. その他
+## 3. その他
 
 ## 参考資料
 
