@@ -8,7 +8,7 @@ services:
     image: postgres:13.5-alpine
     volumes:
       - ./db/data:/var/lib/postgresql/data
-      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/initdb:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
     environment:
@@ -20,25 +20,26 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
-      - 80:80
+      - 8080:80
     volumes:
-      - php-fpm-socket:/var/run/php-fpm
-      - ./backend/src:/app
+      - php-fpm-socket:/var/run
+      - ./backend/src/:/var/www/html/
+    depends_on:
+      - backend
 
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    command: /bin/sh
     volumes:
-      - php-fpm-socket:/var/run/php-fpm 
-      - ./backend/src:/app
+      - php-fpm-socket:/var/run
+      - ./backend/src/:/var/www/html/
     depends_on:
       - db
     tty: true
     stdin_open: true
 
-  frontend:
+frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile

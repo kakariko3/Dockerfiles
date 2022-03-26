@@ -18,8 +18,10 @@
 ├── frontend
 │   └── Dockerfile
 ├── nginx
-│   ├── default.conf
-│   └── Dockerfile
+│   ├── conf.d
+│   │   └── default.conf
+│   ├── Dockerfile
+│   └── nginx.conf
 ├── .gitignore
 └── docker-compose.yml
 ```
@@ -70,7 +72,7 @@ export default defineConfig({
 ```
 docker-compose up -d
 ```
-Webブラウザで http://localhost:3000 へアクセスし、Viteが起動していることを確認する。
+Webブラウザを起動して以下にアクセスし、http://localhost:3000 でVite、http://localhost:8080 でNginxが起動していることを確認する。
 
 ## 6. その他
 
@@ -84,6 +86,12 @@ https://yumegori.com/vscode_react_typescript_eslint_prettier<br>
 
 ## 参考資料
 
+PHP:<br>
+https://qiita.com/yCroma/items/c22d948b4393fbc96f53<br>
 https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4<br>
 https://qiita.com/kouki_o9/items/113002580945e94b1456<br>
 https://www.ritolab.com/entry/220<br>
+
+Vite:<br>
+https://ja.vitejs.dev/config/<br>
+https://zenn.dev/sprout2000/articles/98145cf2a807b1<br>
