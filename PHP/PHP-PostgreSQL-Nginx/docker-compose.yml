@@ -15,6 +15,16 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --locale=C'
 
+  web:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./src:/app
+
   app:
     build:
       context: ./php
@@ -27,13 +37,3 @@ services:
       - db
     tty: true
     stdin_open: true
-
-  web:
-    build: 
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
-    volumes:
-      - php-fpm-socket:/var/run/php-fpm
-      - ./src:/app
