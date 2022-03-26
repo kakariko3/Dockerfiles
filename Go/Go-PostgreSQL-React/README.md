@@ -102,10 +102,10 @@ https://yumegori.com/vscode_react_typescript_eslint_prettier<br>
 
 ## 参考資料
 
-Go:
+Go:<br>
 https://zenn.dev/tomi/articles/2020-10-14-go-docker<br>
 https://zenn.dev/tatsurom/articles/golang-docker-environment<br>
 
-React:
+React:<br>
 https://qiita.com/kashimuuuuu/items/b5f35057dfe1980d053a<br>
 https://zenn.dev/daisukesasaki/articles/9620f7fd0ca348<br>
