@@ -29,9 +29,13 @@ docker-compose up -d
 
 ## VSCodeの自動補完機能を有効化
 
+VSCodeのサイドバーのDockerロゴをクリックすると、`CONTAINERS`に起動しているコンテナの一覧が表示される。<br>
+appコンテナを右クリックし、`Attach Visual Studio Code`を選択して新規ウィンドウを開き、VSCode拡張機能(golang.go)をインストールする。<br>
+また、コマンドパレットから`Go: Install/Update Tools`を選択し、拡張機能が依存するGoパッケージをインストールする。<br>
+
+参考:<br>
+https://zenn.dev/nkys39/articles/setup-docker-commandless<br>
 https://zenn.dev/tomi/articles/2020-10-22-go-docker<br>
-上記のURLを参考に、コンテナ(app)にリモートアクセスする新規ウィンドウを開き、VSCode拡張機能(golang.go)をインストールする。<br>
-また、コマンドパレットから`Go: Install/Update Tools`を選択し、拡張機能が依存するGoパッケージをインストールする。
 
 ## Go Modulesでパッケージをモジュールとして管理
 
