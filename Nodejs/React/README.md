@@ -17,25 +17,25 @@
 docker-compose build --no-cache
 ```
 
-## 3. Reactアプリを作成
+## 3. Reactプロジェクトの作成
 
-下記コマンドを実行し、Reactアプリを作成する。
+下記コマンドを実行し、Reactプロジェクトを作成する。
 ```
-docker-compose run --rm frontend /bin/sh -c 'npx create-react-app app --template typescript'
+docker-compose run --rm frontend /bin/sh -c 'npx create-react-app test --template typescript'
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。<br>
 
-下記コマンドを実行し、Reactアプリを`app/app`ディレクトリから`app`ディレクトリ直下に移動する。
+下記コマンドを実行し、Reactプロジェクトを`app/test`ディレクトリから`app`ディレクトリ直下に移動する。
 ```
-mv app/app/{*,.*} app
+mv app/test/{*,.*} app
 ```
 `*` : 全てのディレクトリ・ファイル<br>
 `.*` : 全てのドットディレクトリ・ドットファイル
 
-下記コマンドを実行し、空になったappディレクトリを削除する。
+下記コマンドを実行し、空になったtestディレクトリを削除する。
 ```
-rmdir app/app
+rmdir app/test
 ```
 
 ## 4. Dockerコンテナの起動
