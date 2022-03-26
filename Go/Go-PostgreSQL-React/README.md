@@ -76,6 +76,18 @@ go mod tidy
 https://zenn.dev/spiegel/articles/20210223-go-module-aware-mode<br>
 https://nishinatoshiharu.com/go-modules-overview/<br>
 
+## Goのプログラムを実行
+
+`/go/src/app`に移動し、下記コマンドを実行する。
+```
+go run main.go
+```
+
+また、コンテナ起動時に`main.go`を実行する場合、`docker-compose.yml`のcommandを以下のように書き換える。
+```
+command: /bin/sh -c 'go run main.go'
+```
+
 ## ESLint & Prettier の設定
 
 下記URLを参考に、ESLintとPrettierのインストールと設定を行う。
