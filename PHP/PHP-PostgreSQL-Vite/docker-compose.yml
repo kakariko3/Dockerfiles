@@ -39,7 +39,7 @@ services:
     tty: true
     stdin_open: true
 
-frontend:
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
