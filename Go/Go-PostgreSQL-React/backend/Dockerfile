@@ -10,4 +10,3 @@ WORKDIR ${ROOT}
 COPY . ${ROOT}
 
 EXPOSE 8080
-CMD ["go", "run", "main.go"]

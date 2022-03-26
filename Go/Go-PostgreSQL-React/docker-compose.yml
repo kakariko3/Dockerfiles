@@ -16,7 +16,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    command: /bin/sh -c 'go run main.go'
+    command: /bin/sh
     volumes:
       - ./backend:/go/src/app
     ports:
