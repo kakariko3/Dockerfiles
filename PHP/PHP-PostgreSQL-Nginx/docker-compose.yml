@@ -23,7 +23,7 @@ services:
       - 80:80
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ./src:/app
+      - ./php/src:/app
 
   app:
     build:
@@ -32,7 +32,7 @@ services:
     command: /bin/sh
     volumes:
       - php-fpm-socket:/var/run/php-fpm 
-      - ./src:/app
+      - ./php/src:/app
     depends_on:
       - db
     tty: true
