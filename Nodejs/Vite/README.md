@@ -39,7 +39,7 @@ rmdir app/test
 
 ## 4. Viteの設定ファイルの作成
 
-appディレクトリ直下に'vite.config.js'を作成し、下記のように記述する。
+appディレクトリ直下に`vite.config.js`を作成し、下記のように記述する。
 ```
 import { defineConfig } from 'vite';
 
