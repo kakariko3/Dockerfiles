@@ -55,6 +55,7 @@ Webブラウザで http://localhost:3000 へアクセスし、Reactが起動し�
 参考:<br>
 https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
 https://yumegori.com/vscode_react_typescript_eslint_prettier<br>
+https://zenn.dev/sikkim/articles/93bf99d8588e68<br>
 
 ## 参考資料
 
