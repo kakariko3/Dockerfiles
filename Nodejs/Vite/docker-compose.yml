@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     command: /bin/sh -c 'yarn && yarn dev'
     volumes:
-      - ./app:/app
+      - .:/app
     ports:
       - 3000:3000
     environment: 

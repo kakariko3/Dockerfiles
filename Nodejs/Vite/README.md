@@ -25,16 +25,16 @@ docker-compose run --rm frontend /bin/sh -c 'yarn create vite test'
 ```
 `--rm` : 停止後コンテナを削除<br>
 
-下記コマンドを実行し、Viteプロジェクトを`app/test`ディレクトリから`app`ディレクトリ直下に移動する。
+下記コマンドを実行し、Viteプロジェクトを`test`ディレクトリからルートディレクトリ直下に移動する。
 ```
-mv app/test/{*,.*} app
+mv test/{*,.*} .
 ```
 `*` : 全てのディレクトリ・ファイル<br>
 `.*` : 全てのドットディレクトリ・ドットファイル<br>
 
 下記コマンドを実行し、空になったtestディレクトリを削除する。
 ```
-rmdir app/test
+rmdir test
 ```
 
 ## 4. Viteの設定ファイルの作成
