@@ -5,10 +5,8 @@
 任意の名前のディレクトリを作成し、そのディレクトリ直下に下記のとおりファイルを配置する。
 ```
 .
-├── app
-│   ├── .gitignore
-│   └── Dockerfile
 ├── .gitignore
+├── Dockerfile
 └── docker-compose.yml
 ```
 
