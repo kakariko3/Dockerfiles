@@ -62,7 +62,7 @@ rmdir frontend/app
 ## 5. database.yml の設定
 
 `rails new`で生成された`backend/config/database.yml`を下記のように書き換える。
-```
+```yml
 default: &default
   adapter: postgresql
   encoding: unicode
