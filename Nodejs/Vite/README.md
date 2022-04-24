@@ -40,7 +40,7 @@ rmdir test
 ## 4. Viteの設定ファイルの作成
 
 appディレクトリ直下に`vite.config.js`を作成し、下記のように記述する。
-```
+```javascript
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -62,7 +62,20 @@ Webブラウザで http://localhost:3000 へアクセスし、Viteが起動し�
 
 ## ESLint & Prettier の設定
 
-下記URLを参考に、ESLintとPrettierのインストールと設定を行う。
+ESLintをインストールする。
+```
+yarn add --dev eslint
+```
+ESLintの初期設定を行う。
+```
+yarn run eslint --init
+```
+Prettierをインストールする。
+```
+yarn add --dev prettier eslint-config-prettier
+```
+
+下記URLを参考に、ESLintとPrettierの設定ファイルを構築する。
 
 参考:<br>
 https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
