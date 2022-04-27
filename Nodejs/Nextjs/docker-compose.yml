@@ -3,11 +3,11 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./docker/frontend
+      context: .
       dockerfile: Dockerfile
     command: /bin/sh -c 'yarn dev'
     volumes:
-      - ./frontend:/app
+      - .:/app
     ports:
       - 3000:3000
     environment: 
