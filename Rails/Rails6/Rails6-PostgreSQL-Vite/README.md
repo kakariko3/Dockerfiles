@@ -58,7 +58,19 @@ mv frontend/test/{*,.*} frontend
 rmdir frontend/test
 ```
 
-## 5. database.yml の設定
+## 5. Viteの設定ファイルの作成
+
+Viteプロジェクトのルートディレクトリ直下に`vite.config.ts`を作成し、下記のように記述する。
+```typescript
+import { defineConfig } from 'vite';
+export default defineConfig({
+  server: {
+    host: '0.0.0.0',
+  },
+});
+```
+
+## 6. database.yml の設定
 
 `rails new`で生成された`backend/config/database.yml`を下記のように書き換える。
 ```yml
@@ -93,7 +105,7 @@ production:
 /.irb_history
 ```
 
-## 6. DBの作成、Dockerコンテナの起動
+## 7. DBの作成、Dockerコンテナの起動
 
 下記コマンドを実行し、データベースを作成する。
 ```
@@ -105,7 +117,7 @@ docker-compose up -d
 ```
 Webブラウザを起動して以下にアクセスし、http://localhost:8000 でRails、http://localhost:3000 でViteが起動していることを確認する。
 
-## 7. その他
+## 8. その他
 
 ## ESLint & Prettier の設定
 
