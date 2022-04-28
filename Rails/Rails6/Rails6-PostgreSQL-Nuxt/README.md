@@ -28,7 +28,7 @@ docker-compose run --rm backend rails new . --force --skip-bundle --database=pos
 `--force` : 既存のGemfileを上書きする<br>
 `--skip-bundle` : bundle installを実行しない<br>
 `--database=postgresql` : DBにPostgreSQLを指定<br>
-`--api` : APIモードでアプリを作成(APIに必要ない部分をデフォルトで作成しなくなる)
+`--api` : APIモードでアプリを作成(APIに必要ない部分を生成しない)
 
 ## 3. Dockerイメージのビルド
 
