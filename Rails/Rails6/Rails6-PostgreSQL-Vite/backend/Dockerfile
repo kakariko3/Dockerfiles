@@ -1,7 +1,7 @@
 FROM ruby:2.7.5-alpine
 
 # イメージのビルド時に使用する一時的な変数を設定
-ARG RUNTIME_PACKAGES='nodejs tzdata postgresql-dev postgresql git' \
+ARG RUNTIME_PACKAGES='make gcc g++ tzdata postgresql postgresql-dev git nodejs yarn' \
     DEV_PACKAGES='build-base curl-dev'
 
 # 環境変数を設定
