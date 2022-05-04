@@ -47,7 +47,7 @@ docker-compose run --rm frontend npx create-nuxt-app app
 下記URLを参考に、create-nuxt-appの各オプションを選択する。<br>
 https://blog.proglus.jp/4972/
 
-下記コマンドを実行し、Reactアプリをappディレクトリからfrontendディレクトリ直下に移動する。
+下記コマンドを実行し、Nuxt.jsアプリをappディレクトリからfrontendディレクトリ直下に移動する。
 ```
 mv frontend/app/{*,.*} frontend
 ```
