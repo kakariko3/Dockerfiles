@@ -53,7 +53,7 @@ mv frontend/test/{*,.*} frontend
 `*` : 全てのディレクトリ・ファイル<br>
 `.*` : 全てのドットディレクトリ・ドットファイル
 
-下記コマンドを実行し、空になったappディレクトリを削除する。
+下記コマンドを実行し、空になったtestディレクトリを削除する。
 ```
 rmdir frontend/test
 ```
@@ -78,9 +78,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
   username: <%= ENV.fetch("POSTGRES_USERNAME", "postgres") %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD", "postgres") %>
-  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
 
 development:
   <<: *default
@@ -115,7 +115,7 @@ docker-compose run --rm backend rails db:create
 ```
 docker-compose up -d
 ```
-Webブラウザを起動して以下にアクセスし、http://localhost:8000 でRails、http://localhost:3000 でViteが起動していることを確認する。
+Webブラウザを起動して以下にアクセスし、http://localhost:3000 でRails、http://localhost:8080 でViteが起動していることを確認する。
 
 ## 8. その他
 
