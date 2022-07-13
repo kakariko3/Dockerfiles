@@ -144,6 +144,46 @@ https://zenn.dev/jpn_asane/articles/d7f44682b74fdc<br>
 https://yumegori.com/vscode_react_typescript_eslint_prettier<br>
 https://zenn.dev/sikkim/articles/93bf99d8588e68<br>
 
+## CORS（Cross-Origin Resource Sharing）の設定
+
+`backend/Gemfile`内の`rack-cors`という記述のコメントアウトを外す。
+```gemfile
+gem 'rack-cors'  # <-コメントアウトを外す
+```
+
+`backend/config/initializers/cors.rb`を下記のように書き換える。
+```ruby
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'http://localhost:3000'
+
+    resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head],
+        credentials: true
+  end
+end
+```
+
+## Solargraphの設定
+
+`backend/Gemfile`内に`solargraph`を追記する。
+```gemfile
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'solargraph', require: false  # <-追記
+end
+```
+
+下記コマンドを実行し、Dockerイメージのビルドを行い、Gemfileの更新を反映させる。
+```
+docker-compose build --no-cache
+```
+
+参考:<br>
+https://qiita.com/belion_freee/items/9e7ea981653237072d1e<br>
+
 ## 参考資料
 
 Rails:<br>
