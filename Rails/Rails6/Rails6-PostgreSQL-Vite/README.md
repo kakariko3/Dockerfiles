@@ -147,7 +147,7 @@ https://zenn.dev/sikkim/articles/93bf99d8588e68<br>
 ## CORS（Cross-Origin Resource Sharing）の設定
 
 `backend/Gemfile`内の`rack-cors`という記述のコメントアウトを外す。
-```gemfile
+```ruby
 gem 'rack-cors'  # <-コメントアウトを外す
 ```
 
@@ -168,7 +168,7 @@ end
 ## Solargraphの設定
 
 `backend/Gemfile`内に`solargraph`を追記する。
-```gemfile
+```ruby
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
