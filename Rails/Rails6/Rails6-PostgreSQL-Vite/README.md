@@ -148,6 +148,7 @@ https://zenn.dev/sikkim/articles/93bf99d8588e68<br>
 
 `backend/Gemfile`内の`rack-cors`という記述のコメントアウトを外す。
 ```ruby
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'  # <-コメントアウトを外す
 ```
 
