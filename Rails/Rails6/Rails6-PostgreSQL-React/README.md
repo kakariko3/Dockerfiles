@@ -42,7 +42,7 @@ docker-compose build --no-cache
 
 下記コマンドを実行し、Reactアプリを作成する。
 ```
-docker-compose run --rm frontend npx create-react-app app --template typescript
+docker-compose run --rm frontend yarn create react-app app --template typescript
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。
@@ -67,9 +67,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
   username: <%= ENV.fetch("POSTGRES_USERNAME", "postgres") %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD", "postgres") %>
-  host: <%= ENV.fetch("POSTGRES_HOST", "db") %>
 
 development:
   <<: *default
@@ -104,7 +104,7 @@ docker-compose run --rm backend rails db:create
 ```
 docker-compose up -d
 ```
-Webブラウザを起動して以下にアクセスし、http://localhost:8000 でRails、http://localhost:3000 でReactが起動していることを確認する。
+Webブラウザを起動して以下にアクセスし、http://localhost:3000 でRails、http://localhost:8080 でReactが起動していることを確認する。
 
 ## 7. その他
 
