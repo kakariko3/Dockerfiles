@@ -46,9 +46,6 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     host: '0.0.0.0',
-    hmr: {
-      clientPort: 3000,
-    },
   },
 });
 ```
@@ -59,7 +56,7 @@ export default defineConfig({
 ```
 docker-compose up -d
 ```
-Webブラウザで http://localhost:3000 へアクセスし、Viteが起動していることを確認する。
+Webブラウザで http://localhost:5173 へアクセスし、Viteが起動していることを確認する。
 
 ## 6. その他
 
