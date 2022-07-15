@@ -39,13 +39,16 @@ rmdir test
 
 ## 4. Viteの設定ファイルの作成
 
-appディレクトリ直下に`vite.config.js`を作成し、下記のように記述する。
-```javascript
+appディレクトリ直下に`vite.config.ts`を作成し、下記のように記述する。
+```typescript
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   server: {
     host: '0.0.0.0',
+    hmr: {
+      clientPort: 3000,
+    },
   },
 });
 ```
