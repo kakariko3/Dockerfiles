@@ -1,9 +1,12 @@
-FROM python:3
+FROM python:3.10.5
 
-ENV PYTHONUNBUFFERED 1
+# 環境変数を定義（Dockerfileとコンテナ内で参照可）
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
-RUN mkdir /code
 WORKDIR /code
-ADD requirements.txt /code/
-RUN pip install -r requirements.txt
-ADD . /code/
+COPY requirements.txt /code
+RUN python -m pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+COPY . /code
