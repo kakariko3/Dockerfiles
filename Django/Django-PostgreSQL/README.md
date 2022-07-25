@@ -43,10 +43,10 @@ TIME_ZONE = 'Asia/Tokyo'
 
 下記コマンドを実行し、データベースの変更を反映させる。
 ```
-docker-compose run --rm backend python manage.py makemigrations
+docker-compose run --rm web python manage.py makemigrations
 ```
 ```
-docker-compose run --rm backend python manage.py migrate
+docker-compose run --rm web python manage.py migrate
 ```
 
 ## 4. Dockerコンテナの起動
