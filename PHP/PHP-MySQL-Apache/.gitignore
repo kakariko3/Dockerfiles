@@ -31,6 +31,8 @@ Temporary Items
 # Original
 *.bk
 .env
+.vscode/
+.idea/
 db/data/
 node_modules/
 vendor/

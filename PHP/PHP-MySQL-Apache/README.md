@@ -23,7 +23,7 @@
 
 下記コマンドを実行し、コンテナを起動する。
 ```
-docker-compose up -d
+docker-compose up -d --build
 ```
 Webブラウザを起動して http://localhost:8080/ へアクセスし、アプリが起動することを確認する。
 
