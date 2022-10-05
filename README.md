@@ -2,7 +2,7 @@
 
 各ディレクトリ内の`README.md`を参照。
 
-## dockerコマンド
+## Docker コマンド
 
 ```
 # コンテナ一覧の表示
@@ -24,36 +24,36 @@ docker system prune -a
 docker system prune -a --volumes
 ```
 
-## docker-composeコマンド
+## Docker Compose コマンド
 
 ```
 # コンテナの作成と起動（バックグラウンドで起動）
-docker-compose up -d
+docker compose up -d
 
 # コンテナの作成と起動（イメージのビルドを実行）
-docker-compose up -d --build
+docker compose up -d --build
 
 # 起動
-docker-compose start
+docker compose start
 
 # 停止
-docker-compose stop
+docker compose stop
 
 # 再起動
-docker-compose restart
+docker compose restart
 
 # 停止＆削除
-docker-compose down
+docker compose down
 
 # コンテナのログを表示
-docker-compose logs -f
+docker compose logs -f
 
 # 起動中のコンテナに入る（bash）
-docker-compose exec <サービス名> bash
+docker compose exec <サービス名> bash
 
 # 起動中のコンテナに入る（ash）
-docker-compose exec <サービス名> ash
+docker compose exec <サービス名> ash
 
 # コンテナ内のコマンドを実行
-docker-compose run <サービス名> <コマンド>
+docker compose run <サービス名> <コマンド>
 ```
