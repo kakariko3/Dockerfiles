@@ -13,35 +13,39 @@
 ## 2. Dockerイメージのビルド
 
 ターミナルを開いて作業ディレクトリに移動し、下記コマンドを実行する。<br>
-```
+```sh
 docker-compose build --no-cache
 ```
 
 ## 3. Reactプロジェクトの作成
 
 下記コマンドを実行し、Reactプロジェクトを作成する。
-```
+```sh
+# using npm
 docker-compose run --rm frontend /bin/sh -c 'npx create-react-app test --template typescript'
+
+# using yarn
+docker-compose run --rm frontend /bin/sh -c 'yarn create react-app test --template typescript'
 ```
 `--rm` : 停止後コンテナを削除<br>
 `--template typescript` : TypeScriptを利用するためのテンプレートを指定。<br>
 
 下記コマンドを実行し、Reactプロジェクトを`app/test`ディレクトリから`app`ディレクトリ直下に移動する。
-```
+```sh
 mv app/test/{*,.*} app
 ```
 `*` : 全てのディレクトリ・ファイル<br>
 `.*` : 全てのドットディレクトリ・ドットファイル
 
 下記コマンドを実行し、空になったtestディレクトリを削除する。
-```
+```sh
 rmdir app/test
 ```
 
 ## 4. Dockerコンテナの起動
 
 下記コマンドを実行し、コンテナを起動する。
-```
+```sh
 docker-compose up -d
 ```
 Webブラウザで http://localhost:3000 へアクセスし、Reactが起動していることを確認する。
